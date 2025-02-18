@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Costura.Fody.4.0.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.4.0.0\build\Costura.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE7A76B4-5D62-42F7-887A-C68429D49C0E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>rover</RootNamespace>
+    <AssemblyName>Rover</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>dag.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=4.0.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.4.0.0\lib\net40\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="CsharpGDI">
+      <HintPath>..\..\CsharpGDI\CsharpGDI\bin\Release\CsharpGDI.dll</HintPath>
+    </Reference>
+    <Reference Include="GDI+">
+      <HintPath>..\..\GDI+\GDI+\bin\Release\GDI+.dll</HintPath>
+    </Reference>
+    <Reference Include="Input">
+      <HintPath>..\..\Input\Input\bin\Release\Input.dll</HintPath>
+    </Reference>
+    <Reference Include="SysPrivileges">
+      <HintPath>..\..\SysPrivileges\SysPrivileges\bin\Release\SysPrivileges.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animation.cs" />
+    <Compile Include="Beats.cs" />
+    <Compile Include="Custom_Blur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custom_Blur.Designer.cs">
+      <DependentUpon>Custom_Blur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom_Filter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custom_Filter.Designer.cs">
+      <DependentUpon>Custom_Filter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom_Melting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custom_Melting.Designer.cs">
+      <DependentUpon>Custom_Melting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom_Tunnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custom_Tunnel.Designer.cs">
+      <DependentUpon>Custom_Tunnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Destructive.cs" />
+    <Compile Include="Draw.cs" />
+    <Compile Include="Executor.cs" />
+    <Compile Include="File_Corrupt.cs" />
+    <Compile Include="Force_Reboot.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GDI.cs" />
+    <Compile Include="GDI_PLUS.cs" />
+    <Compile Include="Idle.cs" />
+    <Compile Include="Junk_Cleaner.cs" />
+    <Compile Include="Key_Input.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="List_string.cs" />
+    <Compile Include="Mbr_writter.cs" />
+    <Compile Include="Mouse_Input.cs" />
+    <Compile Include="Move_Event.cs" />
+    <Compile Include="Msg_Boxes.cs" />
+    <Compile Include="Pattern_Brush.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pattern_Brush.Designer.cs">
+      <DependentUpon>Pattern_Brush.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Register_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register_Form.Designer.cs">
+      <DependentUpon>Register_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registry.cs" />
+    <Compile Include="Registry_Corrupt.cs" />
+    <Compile Include="Resources.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sound_Player.cs" />
+    <Compile Include="TTS_engine.cs" />
+    <Compile Include="TTS_settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTS_settings.Designer.cs">
+      <DependentUpon>TTS_settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTS_Win.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTS_Win.Designer.cs">
+      <DependentUpon>TTS_Win.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebBrowser.Designer.cs">
+      <DependentUpon>WebBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Weird_text.cs" />
+    <EmbeddedResource Include="Custom_Blur.resx">
+      <DependentUpon>Custom_Blur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom_Filter.resx">
+      <DependentUpon>Custom_Filter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom_Melting.resx">
+      <DependentUpon>Custom_Melting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom_Tunnel.resx">
+      <DependentUpon>Custom_Tunnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pattern_Brush.resx">
+      <DependentUpon>Pattern_Brush.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register_Form.resx">
+      <DependentUpon>Register_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTS_settings.resx">
+      <DependentUpon>TTS_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTS_Win.resx">
+      <DependentUpon>TTS_Win.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebBrowser.resx">
+      <DependentUpon>WebBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\dag.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dag.ico" />
+    <EmbeddedResource Include="Resources\EN_slap.txt" />
+    <EmbeddedResource Include="Resources\Slap.wav" />
+    <EmbeddedResource Include="Resources\Reading\021.png" />
+    <EmbeddedResource Include="Resources\Reading\022.png" />
+    <EmbeddedResource Include="Resources\Reading\023.png" />
+    <EmbeddedResource Include="Resources\Reading\024.png" />
+    <EmbeddedResource Include="Resources\Reading\025.png" />
+    <EmbeddedResource Include="Resources\Jump.wav" />
+    <EmbeddedResource Include="Resources\Tap.wav" />
+    <EmbeddedResource Include="Resources\Stir.wav" />
+    <EmbeddedResource Include="Resources\Snoring.wav" />
+    <EmbeddedResource Include="Resources\Slip.wav" />
+    <EmbeddedResource Include="Resources\Lick.wav" />
+    <EmbeddedResource Include="Resources\Aslip.wav" />
+    <EmbeddedResource Include="Resources\RU_other.txt" />
+    <EmbeddedResource Include="Resources\EN_other.txt" />
+    <EmbeddedResource Include="Resources\RU_welcome.txt" />
+    <EmbeddedResource Include="Resources\RU_kill.txt" />
+    <EmbeddedResource Include="Resources\EN_welcome.txt" />
+    <EmbeddedResource Include="Resources\EN_kill.txt" />
+    <EmbeddedResource Include="Resources\Lick\019.png" />
+    <EmbeddedResource Include="Resources\Lick\018.png" />
+    <EmbeddedResource Include="Resources\Lick\017.png" />
+    <EmbeddedResource Include="Resources\Lick\016.png" />
+    <EmbeddedResource Include="Resources\Eat\077.png" />
+    <EmbeddedResource Include="Resources\Eat\076.png" />
+    <EmbeddedResource Include="Resources\Eat\075.png" />
+    <EmbeddedResource Include="Resources\Eat\074.png" />
+    <EmbeddedResource Include="Resources\Eat\073.png" />
+    <EmbeddedResource Include="Resources\Eat\072.png" />
+    <EmbeddedResource Include="Resources\Eat\071.png" />
+    <EmbeddedResource Include="Resources\Eat\070.png" />
+    <EmbeddedResource Include="Resources\_1Idle\005.png" />
+    <EmbeddedResource Include="Resources\_1Idle\004.png" />
+    <EmbeddedResource Include="Resources\Ashamed\001.png" />
+    <EmbeddedResource Include="Resources\Ashamed\002.png" />
+    <EmbeddedResource Include="Resources\Ashamed\003.png" />
+    <EmbeddedResource Include="Resources\Ashamed\004.png" />
+    <EmbeddedResource Include="Resources\Ashamed\005.png" />
+    <EmbeddedResource Include="Resources\Ashamed\006.png" />
+    <EmbeddedResource Include="Resources\Ashamed\007.png" />
+    <EmbeddedResource Include="Resources\Ashamed\008.png" />
+    <EmbeddedResource Include="Resources\Ashamed\009.png" />
+    <EmbeddedResource Include="Resources\Ashamed\010.png" />
+    <EmbeddedResource Include="Resources\Ashamed\011.png" />
+    <EmbeddedResource Include="Resources\Ashamed\012.png" />
+    <EmbeddedResource Include="Resources\Ashamed\013.png" />
+    <EmbeddedResource Include="Resources\Ashamed\014.png" />
+    <EmbeddedResource Include="Resources\Ashamed\015.png" />
+    <EmbeddedResource Include="Resources\Ashamed\016.png" />
+    <EmbeddedResource Include="Resources\Ashamed\017.png" />
+    <EmbeddedResource Include="Resources\Ashamed\018.png" />
+    <EmbeddedResource Include="Resources\Ashamed\019.png" />
+    <EmbeddedResource Include="Resources\Ashamed\020.png" />
+    <EmbeddedResource Include="Resources\Ashamed\021.png" />
+    <EmbeddedResource Include="Resources\Ashamed\022.png" />
+    <EmbeddedResource Include="Resources\Ashamed\023.png" />
+    <EmbeddedResource Include="Resources\Ashamed\024.png" />
+    <EmbeddedResource Include="Resources\Ashamed\025.png" />
+    <EmbeddedResource Include="Resources\Ashamed\026.png" />
+    <EmbeddedResource Include="Resources\Ashamed\027.png" />
+    <EmbeddedResource Include="Resources\Come\001.png" />
+    <EmbeddedResource Include="Resources\Come\002.png" />
+    <EmbeddedResource Include="Resources\Come\003.png" />
+    <EmbeddedResource Include="Resources\Come\004.png" />
+    <EmbeddedResource Include="Resources\Come\005.png" />
+    <EmbeddedResource Include="Resources\Come\006.png" />
+    <EmbeddedResource Include="Resources\Come\007.png" />
+    <EmbeddedResource Include="Resources\Come\008.png" />
+    <EmbeddedResource Include="Resources\Come\009.png" />
+    <EmbeddedResource Include="Resources\Come\010.png" />
+    <EmbeddedResource Include="Resources\Come\011.png" />
+    <EmbeddedResource Include="Resources\Come\012.png" />
+    <EmbeddedResource Include="Resources\Come\013.png" />
+    <EmbeddedResource Include="Resources\Come\014.png" />
+    <EmbeddedResource Include="Resources\Come\015.png" />
+    <EmbeddedResource Include="Resources\Come\016.png" />
+    <EmbeddedResource Include="Resources\Come\017.png" />
+    <EmbeddedResource Include="Resources\Come\018.png" />
+    <EmbeddedResource Include="Resources\Come\019.png" />
+    <EmbeddedResource Include="Resources\Come\020.png" />
+    <EmbeddedResource Include="Resources\Eat\001.png" />
+    <EmbeddedResource Include="Resources\Eat\002.png" />
+    <EmbeddedResource Include="Resources\Eat\003.png" />
+    <EmbeddedResource Include="Resources\Eat\004.png" />
+    <EmbeddedResource Include="Resources\Eat\005.png" />
+    <EmbeddedResource Include="Resources\Eat\006.png" />
+    <EmbeddedResource Include="Resources\Eat\007.png" />
+    <EmbeddedResource Include="Resources\Eat\008.png" />
+    <EmbeddedResource Include="Resources\Eat\009.png" />
+    <EmbeddedResource Include="Resources\Eat\010.png" />
+    <EmbeddedResource Include="Resources\Eat\011.png" />
+    <EmbeddedResource Include="Resources\Eat\012.png" />
+    <EmbeddedResource Include="Resources\Eat\013.png" />
+    <EmbeddedResource Include="Resources\Eat\014.png" />
+    <EmbeddedResource Include="Resources\Eat\015.png" />
+    <EmbeddedResource Include="Resources\Eat\016.png" />
+    <EmbeddedResource Include="Resources\Eat\017.png" />
+    <EmbeddedResource Include="Resources\Eat\018.png" />
+    <EmbeddedResource Include="Resources\Eat\019.png" />
+    <EmbeddedResource Include="Resources\Eat\020.png" />
+    <EmbeddedResource Include="Resources\Eat\021.png" />
+    <EmbeddedResource Include="Resources\Eat\022.png" />
+    <EmbeddedResource Include="Resources\Eat\023.png" />
+    <EmbeddedResource Include="Resources\Eat\024.png" />
+    <EmbeddedResource Include="Resources\Eat\025.png" />
+    <EmbeddedResource Include="Resources\Eat\026.png" />
+    <EmbeddedResource Include="Resources\Eat\027.png" />
+    <EmbeddedResource Include="Resources\Eat\028.png" />
+    <EmbeddedResource Include="Resources\Eat\029.png" />
+    <EmbeddedResource Include="Resources\Eat\030.png" />
+    <EmbeddedResource Include="Resources\Eat\031.png" />
+    <EmbeddedResource Include="Resources\Eat\032.png" />
+    <EmbeddedResource Include="Resources\Eat\033.png" />
+    <EmbeddedResource Include="Resources\Eat\034.png" />
+    <EmbeddedResource Include="Resources\Eat\035.png" />
+    <EmbeddedResource Include="Resources\Eat\036.png" />
+    <EmbeddedResource Include="Resources\Eat\037.png" />
+    <EmbeddedResource Include="Resources\Eat\038.png" />
+    <EmbeddedResource Include="Resources\Eat\039.png" />
+    <EmbeddedResource Include="Resources\Eat\040.png" />
+    <EmbeddedResource Include="Resources\Eat\041.png" />
+    <EmbeddedResource Include="Resources\Eat\042.png" />
+    <EmbeddedResource Include="Resources\Eat\043.png" />
+    <EmbeddedResource Include="Resources\Eat\044.png" />
+    <EmbeddedResource Include="Resources\Eat\045.png" />
+    <EmbeddedResource Include="Resources\Eat\046.png" />
+    <EmbeddedResource Include="Resources\Eat\047.png" />
+    <EmbeddedResource Include="Resources\Eat\048.png" />
+    <EmbeddedResource Include="Resources\Eat\049.png" />
+    <EmbeddedResource Include="Resources\Eat\050.png" />
+    <EmbeddedResource Include="Resources\Eat\051.png" />
+    <EmbeddedResource Include="Resources\Eat\052.png" />
+    <EmbeddedResource Include="Resources\Eat\053.png" />
+    <EmbeddedResource Include="Resources\Eat\054.png" />
+    <EmbeddedResource Include="Resources\Eat\055.png" />
+    <EmbeddedResource Include="Resources\Eat\056.png" />
+    <EmbeddedResource Include="Resources\Eat\057.png" />
+    <EmbeddedResource Include="Resources\Eat\058.png" />
+    <EmbeddedResource Include="Resources\Eat\059.png" />
+    <EmbeddedResource Include="Resources\Eat\060.png" />
+    <EmbeddedResource Include="Resources\Eat\061.png" />
+    <EmbeddedResource Include="Resources\Eat\062.png" />
+    <EmbeddedResource Include="Resources\Eat\063.png" />
+    <EmbeddedResource Include="Resources\Eat\064.png" />
+    <EmbeddedResource Include="Resources\Eat\065.png" />
+    <EmbeddedResource Include="Resources\Eat\066.png" />
+    <EmbeddedResource Include="Resources\Eat\067.png" />
+    <EmbeddedResource Include="Resources\Eat\068.png" />
+    <EmbeddedResource Include="Resources\Eat\069.png" />
+    <EmbeddedResource Include="Resources\End_Speak\001.png" />
+    <EmbeddedResource Include="Resources\End_Speak\002.png" />
+    <EmbeddedResource Include="Resources\End_Speak\003.png" />
+    <EmbeddedResource Include="Resources\End_Speak\004.png" />
+    <EmbeddedResource Include="Resources\End_Speak\005.png" />
+    <EmbeddedResource Include="Resources\End_Speak\006.png" />
+    <EmbeddedResource Include="Resources\Exit\001.png" />
+    <EmbeddedResource Include="Resources\Exit\002.png" />
+    <EmbeddedResource Include="Resources\Exit\003.png" />
+    <EmbeddedResource Include="Resources\Exit\004.png" />
+    <EmbeddedResource Include="Resources\Exit\005.png" />
+    <EmbeddedResource Include="Resources\Exit\006.png" />
+    <EmbeddedResource Include="Resources\Exit\007.png" />
+    <EmbeddedResource Include="Resources\Exit\008.png" />
+    <EmbeddedResource Include="Resources\Exit\009.png" />
+    <EmbeddedResource Include="Resources\Exit\010.png" />
+    <EmbeddedResource Include="Resources\Exit\011.png" />
+    <EmbeddedResource Include="Resources\Exit\012.png" />
+    <EmbeddedResource Include="Resources\Exit\013.png" />
+    <EmbeddedResource Include="Resources\Exit\014.png" />
+    <EmbeddedResource Include="Resources\Exit\015.png" />
+    <EmbeddedResource Include="Resources\Exit\016.png" />
+    <EmbeddedResource Include="Resources\Exit\017.png" />
+    <EmbeddedResource Include="Resources\Exit\018.png" />
+    <EmbeddedResource Include="Resources\Exit\019.png" />
+    <EmbeddedResource Include="Resources\Exit\020.png" />
+    <EmbeddedResource Include="Resources\Exit\021.png" />
+    <EmbeddedResource Include="Resources\Exit\022.png" />
+    <EmbeddedResource Include="Resources\Exit\023.png" />
+    <EmbeddedResource Include="Resources\Exit\024.png" />
+    <EmbeddedResource Include="Resources\Exit\025.png" />
+    <EmbeddedResource Include="Resources\Exit\026.png" />
+    <EmbeddedResource Include="Resources\Exit\027.png" />
+    <EmbeddedResource Include="Resources\Exit\028.png" />
+    <EmbeddedResource Include="Resources\Exit\029.png" />
+    <EmbeddedResource Include="Resources\GetAttention\001.png" />
+    <EmbeddedResource Include="Resources\GetAttention\002.png" />
+    <EmbeddedResource Include="Resources\GetAttention\003.png" />
+    <EmbeddedResource Include="Resources\GetAttention\004.png" />
+    <EmbeddedResource Include="Resources\GetAttention\005.png" />
+    <EmbeddedResource Include="Resources\GetAttention\006.png" />
+    <EmbeddedResource Include="Resources\GetAttention\007.png" />
+    <EmbeddedResource Include="Resources\GetAttention\008.png" />
+    <EmbeddedResource Include="Resources\GetAttention\009.png" />
+    <EmbeddedResource Include="Resources\GetAttention\010.png" />
+    <EmbeddedResource Include="Resources\GetAttention\011.png" />
+    <EmbeddedResource Include="Resources\Haf\001.png" />
+    <EmbeddedResource Include="Resources\Haf\002.png" />
+    <EmbeddedResource Include="Resources\Haf\003.png" />
+    <EmbeddedResource Include="Resources\Haf\004.png" />
+    <EmbeddedResource Include="Resources\Haf\005.png" />
+    <EmbeddedResource Include="Resources\Haf\006.png" />
+    <EmbeddedResource Include="Resources\Haf\007.png" />
+    <EmbeddedResource Include="Resources\Haf\008.png" />
+    <EmbeddedResource Include="Resources\Lick\001.png" />
+    <EmbeddedResource Include="Resources\Lick\002.png" />
+    <EmbeddedResource Include="Resources\Lick\003.png" />
+    <EmbeddedResource Include="Resources\Lick\004.png" />
+    <EmbeddedResource Include="Resources\Lick\005.png" />
+    <EmbeddedResource Include="Resources\Lick\006.png" />
+    <EmbeddedResource Include="Resources\Lick\007.png" />
+    <EmbeddedResource Include="Resources\Lick\008.png" />
+    <EmbeddedResource Include="Resources\Lick\009.png" />
+    <EmbeddedResource Include="Resources\Lick\010.png" />
+    <EmbeddedResource Include="Resources\Lick\011.png" />
+    <EmbeddedResource Include="Resources\Lick\012.png" />
+    <EmbeddedResource Include="Resources\Lick\013.png" />
+    <EmbeddedResource Include="Resources\Lick\014.png" />
+    <EmbeddedResource Include="Resources\Lick\015.png" />
+    <EmbeddedResource Include="Resources\Reading\001.png" />
+    <EmbeddedResource Include="Resources\Reading\002.png" />
+    <EmbeddedResource Include="Resources\Reading\003.png" />
+    <EmbeddedResource Include="Resources\Reading\004.png" />
+    <EmbeddedResource Include="Resources\Reading\005.png" />
+    <EmbeddedResource Include="Resources\Reading\006.png" />
+    <EmbeddedResource Include="Resources\Reading\007.png" />
+    <EmbeddedResource Include="Resources\Reading\008.png" />
+    <EmbeddedResource Include="Resources\Reading\009.png" />
+    <EmbeddedResource Include="Resources\Reading\010.png" />
+    <EmbeddedResource Include="Resources\Reading\011.png" />
+    <EmbeddedResource Include="Resources\Reading\012.png" />
+    <EmbeddedResource Include="Resources\Reading\013.png" />
+    <EmbeddedResource Include="Resources\Reading\014.png" />
+    <EmbeddedResource Include="Resources\Reading\015.png" />
+    <EmbeddedResource Include="Resources\Reading\016.png" />
+    <EmbeddedResource Include="Resources\Reading\017.png" />
+    <EmbeddedResource Include="Resources\Reading\018.png" />
+    <EmbeddedResource Include="Resources\Reading\019.png" />
+    <EmbeddedResource Include="Resources\Reading\020.png" />
+    <EmbeddedResource Include="Resources\Slap\001.png" />
+    <EmbeddedResource Include="Resources\Slap\002.png" />
+    <EmbeddedResource Include="Resources\Slap\003.png" />
+    <EmbeddedResource Include="Resources\Slap\004.png" />
+    <EmbeddedResource Include="Resources\Slap\005.png" />
+    <EmbeddedResource Include="Resources\Slap\006.png" />
+    <EmbeddedResource Include="Resources\Sleep\001.png" />
+    <EmbeddedResource Include="Resources\Sleep\002.png" />
+    <EmbeddedResource Include="Resources\Sleep\003.png" />
+    <EmbeddedResource Include="Resources\Sleep\004.png" />
+    <EmbeddedResource Include="Resources\Sleep\005.png" />
+    <EmbeddedResource Include="Resources\Sleep\006.png" />
+    <EmbeddedResource Include="Resources\Sleep\007.png" />
+    <EmbeddedResource Include="Resources\Sleep\008.png" />
+    <EmbeddedResource Include="Resources\Speak\001.png" />
+    <EmbeddedResource Include="Resources\Speak\002.png" />
+    <EmbeddedResource Include="Resources\Speak\003.png" />
+    <EmbeddedResource Include="Resources\Speak\004.png" />
+    <EmbeddedResource Include="Resources\Speak\005.png" />
+    <EmbeddedResource Include="Resources\Speak\006.png" />
+    <EmbeddedResource Include="Resources\Speak\007.png" />
+    <EmbeddedResource Include="Resources\Speak\008.png" />
+    <EmbeddedResource Include="Resources\Speak\009.png" />
+    <EmbeddedResource Include="Resources\Speak\010.png" />
+    <EmbeddedResource Include="Resources\Speak\011.png" />
+    <EmbeddedResource Include="Resources\Speak\012.png" />
+    <EmbeddedResource Include="Resources\Speak\013.png" />
+    <EmbeddedResource Include="Resources\Speak\014.png" />
+    <EmbeddedResource Include="Resources\Speak\015.png" />
+    <EmbeddedResource Include="Resources\Start_Speak\001.png" />
+    <EmbeddedResource Include="Resources\Start_Speak\002.png" />
+    <EmbeddedResource Include="Resources\Start_Speak\003.png" />
+    <EmbeddedResource Include="Resources\Tired\001.png" />
+    <EmbeddedResource Include="Resources\Tired\002.png" />
+    <EmbeddedResource Include="Resources\Tired\003.png" />
+    <EmbeddedResource Include="Resources\Tired\004.png" />
+    <EmbeddedResource Include="Resources\Tired\005.png" />
+    <EmbeddedResource Include="Resources\Tired\006.png" />
+    <EmbeddedResource Include="Resources\Tired\007.png" />
+    <EmbeddedResource Include="Resources\Tired\008.png" />
+    <EmbeddedResource Include="Resources\Tired\009.png" />
+    <EmbeddedResource Include="Resources\Tired\010.png" />
+    <EmbeddedResource Include="Resources\Tired\011.png" />
+    <EmbeddedResource Include="Resources\Tired\012.png" />
+    <EmbeddedResource Include="Resources\Tired\013.png" />
+    <EmbeddedResource Include="Resources\_10Idle\001.png" />
+    <EmbeddedResource Include="Resources\_10Idle\002.png" />
+    <EmbeddedResource Include="Resources\_10Idle\003.png" />
+    <EmbeddedResource Include="Resources\_10Idle\004.png" />
+    <EmbeddedResource Include="Resources\_10Idle\005.png" />
+    <EmbeddedResource Include="Resources\_10Idle\006.png" />
+    <EmbeddedResource Include="Resources\_10Idle\007.png" />
+    <EmbeddedResource Include="Resources\_10Idle\008.png" />
+    <EmbeddedResource Include="Resources\_10Idle\009.png" />
+    <EmbeddedResource Include="Resources\_10Idle\010.png" />
+    <EmbeddedResource Include="Resources\_10Idle\011.png" />
+    <EmbeddedResource Include="Resources\_10Idle\012.png" />
+    <EmbeddedResource Include="Resources\_10Idle\013.png" />
+    <EmbeddedResource Include="Resources\_10Idle\014.png" />
+    <EmbeddedResource Include="Resources\_10Idle\015.png" />
+    <EmbeddedResource Include="Resources\_10Idle\016.png" />
+    <EmbeddedResource Include="Resources\_10Idle\017.png" />
+    <EmbeddedResource Include="Resources\_10Idle\018.png" />
+    <EmbeddedResource Include="Resources\_10Idle\019.png" />
+    <EmbeddedResource Include="Resources\_10Idle\020.png" />
+    <EmbeddedResource Include="Resources\_10Idle\021.png" />
+    <EmbeddedResource Include="Resources\_10Idle\022.png" />
+    <EmbeddedResource Include="Resources\_10Idle\023.png" />
+    <EmbeddedResource Include="Resources\_10Idle\024.png" />
+    <EmbeddedResource Include="Resources\_10Idle\025.png" />
+    <EmbeddedResource Include="Resources\_10Idle\026.png" />
+    <EmbeddedResource Include="Resources\_10Idle\027.png" />
+    <EmbeddedResource Include="Resources\_10Idle\028.png" />
+    <EmbeddedResource Include="Resources\_10Idle\029.png" />
+    <EmbeddedResource Include="Resources\_10Idle\030.png" />
+    <EmbeddedResource Include="Resources\_10Idle\031.png" />
+    <EmbeddedResource Include="Resources\_10Idle\032.png" />
+    <EmbeddedResource Include="Resources\_10Idle\033.png" />
+    <EmbeddedResource Include="Resources\_10Idle\034.png" />
+    <EmbeddedResource Include="Resources\_10Idle\035.png" />
+    <EmbeddedResource Include="Resources\_10Idle\036.png" />
+    <EmbeddedResource Include="Resources\_1Idle\001.png" />
+    <EmbeddedResource Include="Resources\_1Idle\002.png" />
+    <EmbeddedResource Include="Resources\_1Idle\003.png" />
+    <EmbeddedResource Include="Resources\_2Idle\001.png" />
+    <EmbeddedResource Include="Resources\_2Idle\002.png" />
+    <EmbeddedResource Include="Resources\_2Idle\003.png" />
+    <EmbeddedResource Include="Resources\_2Idle\004.png" />
+    <EmbeddedResource Include="Resources\_2Idle\005.png" />
+    <EmbeddedResource Include="Resources\_2Idle\006.png" />
+    <EmbeddedResource Include="Resources\_2Idle\007.png" />
+    <EmbeddedResource Include="Resources\_2Idle\008.png" />
+    <EmbeddedResource Include="Resources\_2Idle\009.png" />
+    <EmbeddedResource Include="Resources\_2Idle\010.png" />
+    <EmbeddedResource Include="Resources\_2Idle\011.png" />
+    <EmbeddedResource Include="Resources\_2Idle\012.png" />
+    <EmbeddedResource Include="Resources\_2Idle\013.png" />
+    <EmbeddedResource Include="Resources\_2Idle\014.png" />
+    <EmbeddedResource Include="Resources\_2Idle\015.png" />
+    <EmbeddedResource Include="Resources\_2Idle\016.png" />
+    <EmbeddedResource Include="Resources\_2Idle\017.png" />
+    <EmbeddedResource Include="Resources\_3Idle\001.png" />
+    <EmbeddedResource Include="Resources\_3Idle\002.png" />
+    <EmbeddedResource Include="Resources\_3Idle\003.png" />
+    <EmbeddedResource Include="Resources\_3Idle\004.png" />
+    <EmbeddedResource Include="Resources\_3Idle\005.png" />
+    <EmbeddedResource Include="Resources\_3Idle\006.png" />
+    <EmbeddedResource Include="Resources\_3Idle\007.png" />
+    <EmbeddedResource Include="Resources\_3Idle\008.png" />
+    <EmbeddedResource Include="Resources\_3Idle\009.png" />
+    <EmbeddedResource Include="Resources\_3Idle\010.png" />
+    <EmbeddedResource Include="Resources\_3Idle\011.png" />
+    <EmbeddedResource Include="Resources\_3Idle\012.png" />
+    <EmbeddedResource Include="Resources\_3Idle\013.png" />
+    <EmbeddedResource Include="Resources\_3Idle\014.png" />
+    <EmbeddedResource Include="Resources\_3Idle\015.png" />
+    <EmbeddedResource Include="Resources\_3Idle\016.png" />
+    <EmbeddedResource Include="Resources\_3Idle\017.png" />
+    <EmbeddedResource Include="Resources\_3Idle\018.png" />
+    <EmbeddedResource Include="Resources\_3Idle\019.png" />
+    <EmbeddedResource Include="Resources\_3Idle\020.png" />
+    <EmbeddedResource Include="Resources\_3Idle\021.png" />
+    <EmbeddedResource Include="Resources\_3Idle\022.png" />
+    <EmbeddedResource Include="Resources\_3Idle\023.png" />
+    <EmbeddedResource Include="Resources\_3Idle\024.png" />
+    <EmbeddedResource Include="Resources\_3Idle\025.png" />
+    <EmbeddedResource Include="Resources\_3Idle\026.png" />
+    <EmbeddedResource Include="Resources\_3Idle\027.png" />
+    <EmbeddedResource Include="Resources\_3Idle\028.png" />
+    <EmbeddedResource Include="Resources\_3Idle\029.png" />
+    <EmbeddedResource Include="Resources\_3Idle\030.png" />
+    <EmbeddedResource Include="Resources\_3Idle\031.png" />
+    <EmbeddedResource Include="Resources\_4Idle\001.png" />
+    <EmbeddedResource Include="Resources\_4Idle\002.png" />
+    <EmbeddedResource Include="Resources\_4Idle\003.png" />
+    <EmbeddedResource Include="Resources\_4Idle\004.png" />
+    <EmbeddedResource Include="Resources\_4Idle\005.png" />
+    <EmbeddedResource Include="Resources\_4Idle\006.png" />
+    <EmbeddedResource Include="Resources\_4Idle\007.png" />
+    <EmbeddedResource Include="Resources\_4Idle\008.png" />
+    <EmbeddedResource Include="Resources\_4Idle\009.png" />
+    <EmbeddedResource Include="Resources\_4Idle\010.png" />
+    <EmbeddedResource Include="Resources\_4Idle\011.png" />
+    <EmbeddedResource Include="Resources\_4Idle\012.png" />
+    <EmbeddedResource Include="Resources\_4Idle\013.png" />
+    <EmbeddedResource Include="Resources\_5Idle\001.png" />
+    <EmbeddedResource Include="Resources\_5Idle\002.png" />
+    <EmbeddedResource Include="Resources\_5Idle\003.png" />
+    <EmbeddedResource Include="Resources\_5Idle\004.png" />
+    <EmbeddedResource Include="Resources\_5Idle\005.png" />
+    <EmbeddedResource Include="Resources\_5Idle\006.png" />
+    <EmbeddedResource Include="Resources\_5Idle\007.png" />
+    <EmbeddedResource Include="Resources\_5Idle\008.png" />
+    <EmbeddedResource Include="Resources\_5Idle\009.png" />
+    <EmbeddedResource Include="Resources\_5Idle\010.png" />
+    <EmbeddedResource Include="Resources\_5Idle\011.png" />
+    <EmbeddedResource Include="Resources\_5Idle\012.png" />
+    <EmbeddedResource Include="Resources\_5Idle\013.png" />
+    <EmbeddedResource Include="Resources\_5Idle\014.png" />
+    <EmbeddedResource Include="Resources\_5Idle\015.png" />
+    <EmbeddedResource Include="Resources\_5Idle\016.png" />
+    <EmbeddedResource Include="Resources\_5Idle\017.png" />
+    <EmbeddedResource Include="Resources\_5Idle\018.png" />
+    <EmbeddedResource Include="Resources\_6Idle\001.png" />
+    <EmbeddedResource Include="Resources\_6Idle\002.png" />
+    <EmbeddedResource Include="Resources\_6Idle\003.png" />
+    <EmbeddedResource Include="Resources\_6Idle\004.png" />
+    <EmbeddedResource Include="Resources\_6Idle\005.png" />
+    <EmbeddedResource Include="Resources\_6Idle\006.png" />
+    <EmbeddedResource Include="Resources\_6Idle\007.png" />
+    <EmbeddedResource Include="Resources\_6Idle\008.png" />
+    <EmbeddedResource Include="Resources\_6Idle\009.png" />
+    <EmbeddedResource Include="Resources\_6Idle\010.png" />
+    <EmbeddedResource Include="Resources\_7Idle\001.png" />
+    <EmbeddedResource Include="Resources\_7Idle\002.png" />
+    <EmbeddedResource Include="Resources\_7Idle\003.png" />
+    <EmbeddedResource Include="Resources\_7Idle\004.png" />
+    <EmbeddedResource Include="Resources\_7Idle\005.png" />
+    <EmbeddedResource Include="Resources\_7Idle\006.png" />
+    <EmbeddedResource Include="Resources\_7Idle\007.png" />
+    <EmbeddedResource Include="Resources\_7Idle\008.png" />
+    <EmbeddedResource Include="Resources\_7Idle\009.png" />
+    <EmbeddedResource Include="Resources\_7Idle\010.png" />
+    <EmbeddedResource Include="Resources\_7Idle\011.png" />
+    <EmbeddedResource Include="Resources\_7Idle\012.png" />
+    <EmbeddedResource Include="Resources\_7Idle\013.png" />
+    <EmbeddedResource Include="Resources\_7Idle\014.png" />
+    <EmbeddedResource Include="Resources\_7Idle\015.png" />
+    <EmbeddedResource Include="Resources\_7Idle\016.png" />
+    <EmbeddedResource Include="Resources\_7Idle\017.png" />
+    <EmbeddedResource Include="Resources\_7Idle\018.png" />
+    <EmbeddedResource Include="Resources\_7Idle\019.png" />
+    <EmbeddedResource Include="Resources\_7Idle\020.png" />
+    <EmbeddedResource Include="Resources\_7Idle\021.png" />
+    <EmbeddedResource Include="Resources\_7Idle\022.png" />
+    <EmbeddedResource Include="Resources\_7Idle\023.png" />
+    <EmbeddedResource Include="Resources\_7Idle\024.png" />
+    <EmbeddedResource Include="Resources\_7Idle\025.png" />
+    <EmbeddedResource Include="Resources\_8Idle\001.png" />
+    <EmbeddedResource Include="Resources\_8Idle\002.png" />
+    <EmbeddedResource Include="Resources\_8Idle\003.png" />
+    <EmbeddedResource Include="Resources\_8Idle\004.png" />
+    <EmbeddedResource Include="Resources\_8Idle\005.png" />
+    <EmbeddedResource Include="Resources\_8Idle\006.png" />
+    <EmbeddedResource Include="Resources\_8Idle\007.png" />
+    <EmbeddedResource Include="Resources\_8Idle\008.png" />
+    <EmbeddedResource Include="Resources\_8Idle\009.png" />
+    <EmbeddedResource Include="Resources\_8Idle\010.png" />
+    <EmbeddedResource Include="Resources\_8Idle\011.png" />
+    <EmbeddedResource Include="Resources\_8Idle\012.png" />
+    <EmbeddedResource Include="Resources\_9Idle\001.png" />
+    <EmbeddedResource Include="Resources\_9Idle\002.png" />
+    <EmbeddedResource Include="Resources\_9Idle\003.png" />
+    <EmbeddedResource Include="Resources\_9Idle\004.png" />
+    <EmbeddedResource Include="Resources\_9Idle\005.png" />
+    <EmbeddedResource Include="Resources\_9Idle\006.png" />
+    <EmbeddedResource Include="Resources\_9Idle\007.png" />
+    <EmbeddedResource Include="Resources\_9Idle\008.png" />
+    <EmbeddedResource Include="Resources\_9Idle\009.png" />
+    <EmbeddedResource Include="Resources\_9Idle\010.png" />
+    <EmbeddedResource Include="Resources\_9Idle\011.png" />
+    <EmbeddedResource Include="Resources\_9Idle\012.png" />
+    <EmbeddedResource Include="Resources\_9Idle\013.png" />
+    <EmbeddedResource Include="Resources\_9Idle\014.png" />
+    <EmbeddedResource Include="Resources\_9Idle\015.png" />
+    <EmbeddedResource Include="Resources\_9Idle\016.png" />
+    <EmbeddedResource Include="Resources\_9Idle\017.png" />
+    <EmbeddedResource Include="Resources\_9Idle\018.png" />
+    <EmbeddedResource Include="Resources\_9Idle\019.png" />
+    <EmbeddedResource Include="Resources\_9Idle\020.png" />
+    <EmbeddedResource Include="Resources\_9Idle\021.png" />
+    <EmbeddedResource Include="Resources\_9Idle\022.png" />
+    <EmbeddedResource Include="Resources\_9Idle\023.png" />
+    <EmbeddedResource Include="Resources\_9Idle\024.png" />
+    <EmbeddedResource Include="Resources\_9Idle\025.png" />
+    <EmbeddedResource Include="Resources\_9Idle\026.png" />
+    <EmbeddedResource Include="Resources\_9Idle\027.png" />
+    <EmbeddedResource Include="Resources\_9Idle\028.png" />
+    <EmbeddedResource Include="Resources\_9Idle\029.png" />
+    <EmbeddedResource Include="Resources\_9Idle\030.png" />
+    <EmbeddedResource Include="Resources\_9Idle\031.png" />
+    <EmbeddedResource Include="Resources\_9Idle\032.png" />
+    <EmbeddedResource Include="Resources\_9Idle\033.png" />
+    <EmbeddedResource Include="Resources\_9Idle\034.png" />
+    <EmbeddedResource Include="Resources\_9Idle\035.png" />
+    <EmbeddedResource Include="Resources\_9Idle\036.png" />
+    <EmbeddedResource Include="Resources\Whine.wav" />
+    <EmbeddedResource Include="Resources\Sniff.wav" />
+    <EmbeddedResource Include="Resources\Scrape.wav" />
+    <EmbeddedResource Include="Resources\Haf.wav" />
+    <EmbeddedResource Include="Resources\Breath.wav" />
+    <EmbeddedResource Include="Resources\Attention.wav" />
+    <EmbeddedResource Include="Resources\0001.wav" />
+    <EmbeddedResource Include="Resources\000.wav" />
+    <EmbeddedResource Include="Resources\RU_jokes.txt" />
+    <EmbeddedResource Include="Resources\RU_gdi.txt" />
+    <EmbeddedResource Include="Resources\RU_facts.txt" />
+    <EmbeddedResource Include="Resources\EN_jokes.txt" />
+    <EmbeddedResource Include="Resources\EN_gdi.txt" />
+    <EmbeddedResource Include="Resources\EN_facts.txt" />
+    <EmbeddedResource Include="Resources\Snoring.mp3" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.5.0.0\build\Fody.targets" Condition="Exists('..\packages\Fody.5.0.0\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.5.0.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.5.0.0\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.4.0.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.4.0.0\build\Costura.Fody.props'))" />
+  </Target>
+</Project>
