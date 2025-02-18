@@ -15,4 +15,4 @@ So if you are curious about malwares and you want to know what this malware is c
 
 Of course try it out in the safe enviroment (virtual machine) rather than on your physical hardware. Keep in mind that this malware can damage system files and make the device unusable!
 
-![Idle10](https://github.com/MalwareStudio/Rover-The-Desktop-Assistant/assets/49496834/d4e65fc0-42f6-445f-9d95-089ad8638dfb)
+![]([https://github.com/MalwareStudio/Rover-The-Desktop-Assistant/blob/main/Images/Rover_Preview.png)
