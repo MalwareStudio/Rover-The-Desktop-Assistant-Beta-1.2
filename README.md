@@ -22,3 +22,11 @@ Check out the video about Rover Beta 1.2 👉 https://youtu.be/LejK_DRv05k?si=r7
 Full video about the First Beta Version 👉 https://youtu.be/RT6WLne24Bc?si=Yg6eUiwecKXlsrw4
 
 ## What have been changed?
+
+This is just a small update which brings more GDI effects, animations and some utilities. Features such as Games, Terminal, RoverNET2.0, RoverLOCK and RoverPAINT have not been finished yet, so they will not work if you try to access them.
+
+### More GDI Effects
+
+You can try out new GDI payloads such as Lighting, Brushes (Customizable), NoEscape, Mandela and also new GDI+ effects like Hue, Saturation, Contrast and Pixelate.
+
+From this point, you can stop any GDI effects (applies only for animated ones) by typing (F5) and erase by typing (F6).
